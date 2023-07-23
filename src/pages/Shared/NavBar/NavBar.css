@@ -1,0 +1,35 @@
+.active {
+    display: flex;
+    justify-items: center;
+    margin-bottom: -0.25rem
+        /* -4px */
+    ;
+    border-bottom-width: 2px;
+    border-color: transparent;
+    --tw-text-opacity: 1;
+    color: rgb(167 139 250 / var(--tw-text-opacity)) !important;
+    padding-left: 1rem
+        /* 16px */
+    ;
+    padding-right: 1rem
+        /* 16px */
+    ;
+    --tw-border-opacity: 1;
+    border-color: rgb(167 139 250 / var(--tw-border-opacity)) !important;
+}
+
+.default {
+    display: flex;
+    justify-items: center;
+    margin-bottom: -0.25rem
+        /* -4px */
+    ;
+
+    border-color: transparent;
+    padding-left: 1rem
+        /* 16px */
+    ;
+    padding-right: 1rem
+        /* 16px */
+    ;
+}
