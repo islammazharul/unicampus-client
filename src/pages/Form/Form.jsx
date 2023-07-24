@@ -9,7 +9,7 @@ const Form = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch(`http://localhost:5000/admission`, {
+        fetch(`https://unicampus-server.vercel.app/admission`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"

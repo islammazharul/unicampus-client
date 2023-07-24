@@ -7,7 +7,7 @@ const MyCollege = () => {
     const { user } = useContext(AuthContext)
     const [college, setCollege] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/admission?email=${user?.email}`)
+        fetch(`https://unicampus-server.vercel.app/admission?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setCollege(data);

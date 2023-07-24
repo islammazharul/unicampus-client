@@ -22,7 +22,7 @@ const Register = () => {
                     .then(() => {
                         const savedUser = { name: data.name, email: data.email, photo: data.photo, }
                         // axiosSecure.post("/users", savedUser)
-                        fetch("http://localhost:5000/users", {
+                        fetch("https://unicampus-server.vercel.app/users", {
                             method: "POST",
                             headers: {
                                 "content-type": "application/json"

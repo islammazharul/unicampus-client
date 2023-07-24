@@ -5,7 +5,7 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 const Admission = () => {
     const [college, setCollege] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/colleges")
+        fetch("https://unicampus-server.vercel.app/colleges")
             .then(res => res.json())
             .then(data => {
                 setCollege(data);

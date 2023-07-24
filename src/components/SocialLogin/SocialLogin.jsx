@@ -18,7 +18,7 @@ const SocialLogin = () => {
                 const loggedUser = result.user
                 const savedUser = { name: loggedUser.displayName, email: loggedUser.email, photo: loggedUser.photoURL, role: 'student' }
 
-                fetch("http://localhost:5000/users", {
+                fetch("https://unicampus-server.vercel.app/users", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
