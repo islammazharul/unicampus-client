@@ -7,6 +7,7 @@ import AllCollege from "../pages/AllCollege/AllCollege";
 import Admission from "../pages/Admission/Admission";
 import MyCollege from "../pages/MyCollege/MyCollege";
 import Form from "../pages/Form/Form";
+import Feedback from "../pages/Feedback/Feedback";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: "form",
                 element: <Form></Form>
+            },
+            {
+                path: "feedback",
+                element: <Feedback></Feedback>
             }
         ]
     },

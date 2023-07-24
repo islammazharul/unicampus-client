@@ -1,13 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import { AuthContext } from '../../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Form = () => {
-    const { register, handleSubmit, reset } = useForm();
+    const { user } = useContext(AuthContext)
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        console.log(data)
+        fetch(`http://localhost:5000/admission`, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                if (result.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Admission successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
+    };
     return (
         <div className="w-full px-2 my-10">
-            {/* <SectionTitle subHeading="What's new" heading="Add an Class" ></SectionTitle> */}
+            <SectionTitle heading="Admission Form" ></SectionTitle>
             <div className='lg:w-9/12 lg:p-8 mx-auto bg-gray-800 rounded-md text-gray-100 p-5'>
-                <form /* onSubmit={handleSubmit(onSubmit)} */ className='space-y-3'>
+                <form onSubmit={handleSubmit(onSubmit)} className='space-y-3'>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text font-semibold">Institute Name*</span>
@@ -30,7 +56,7 @@ const Form = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Candidate Name*</span>
                         </label>
-                        <input type="text" defaultValue={"user?.displayName"} placeholder={"user?.displayName"}
+                        <input type="text" defaultValue={user?.displayName} placeholder={user?.displayName}
                             {...register("candidate_name", { required: true, maxLength: 120 })}
                             className="input input-bordered rounded-md w-full text-gray-900 h-10" />
                     </div>
@@ -38,7 +64,7 @@ const Form = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Candidate Email*</span>
                         </label>
-                        <input type="email" defaultValue={"user?.email"} placeholder={"user?.email"}
+                        <input type="email" defaultValue={user?.email} placeholder={user?.email}
                             {...register("email", { required: true })}
                             className="input input-bordered rounded-md w-full text-gray-900 h-10" />
                     </div>
