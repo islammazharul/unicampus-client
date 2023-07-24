@@ -22,7 +22,7 @@ const Register = () => {
                     .then(() => {
                         const savedUser = { name: data.name, email: data.email, photo: data.photo, }
                         // axiosSecure.post("/users", savedUser)
-                        fetch("https://park-sports-server.vercel.app/users", {
+                        fetch("http://localhost:5000/users", {
                             method: "POST",
                             headers: {
                                 "content-type": "application/json"
