@@ -27,7 +27,7 @@ const NavBar = () => {
             })
     }
     return (
-        <nav className="p-4 w-full bg-gray-800 text-gray-100 shadow">
+        <nav className="w-full z-10 bg-gray-900 text-gray-100">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">

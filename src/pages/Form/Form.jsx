@@ -40,7 +40,7 @@ const Form = () => {
                         </label>
                         <input type="text" placeholder="Institute Name"
                             {...register("institute_name", { required: true, maxLength: 120 })}
-                            className="input input-bordered rounded-md w-full text-gray-900 h-10" />
+                            className="input input-bordered rounded-md w-full text-gray-900 h-10 px-2" />
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
@@ -48,7 +48,7 @@ const Form = () => {
                         </label>
                         <input type="text" placeholder="Subject Name"
                             {...register("subject_name", { required: true, maxLength: 120 })}
-                            className="input input-bordered rounded-md w-full text-gray-900 h-10" />
+                            className="input input-bordered rounded-md w-full text-gray-900 h-10 px-2" />
                     </div>
 
 
@@ -58,7 +58,7 @@ const Form = () => {
                         </label>
                         <input type="text" defaultValue={user?.displayName} placeholder={user?.displayName}
                             {...register("candidate_name", { required: true, maxLength: 120 })}
-                            className="input input-bordered rounded-md w-full text-gray-900 h-10" />
+                            className="input input-bordered rounded-md w-full text-gray-900 h-10 px-2" />
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
@@ -66,13 +66,13 @@ const Form = () => {
                         </label>
                         <input type="email" defaultValue={user?.email} placeholder={user?.email}
                             {...register("email", { required: true })}
-                            className="input input-bordered rounded-md w-full text-gray-900 h-10" />
+                            className="input input-bordered rounded-md w-full text-gray-900 h-10 px-2" />
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text font-semibold">Phone*</span>
                         </label>
-                        <input type="phone" {...register("phone", { required: true })} placeholder="Type here" className="input input-bordered rounded-md w-full text-gray-900 h-10" />
+                        <input type="phone" {...register("phone", { required: true })} placeholder="Type here" className="input input-bordered rounded-md w-full text-gray-900 h-10 px-2" />
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
@@ -80,19 +80,19 @@ const Form = () => {
                         </label>
                         <input type="date" placeholder="Date of Birth"
                             {...register("birth-date", { required: true, maxLength: 120 })}
-                            className="input input-bordered rounded-md w-full text-gray-900 h-10" />
+                            className="input input-bordered rounded-md w-full text-gray-900 h-10 px-2" />
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text font-semibold">Address*</span>
                         </label>
-                        <input type="address" {...register("address", { required: true })} placeholder="Type here" className="input input-bordered rounded-md w-full text-gray-900 h-10" />
+                        <input type="address" {...register("address", { required: true })} placeholder="Type here" className="input input-bordered rounded-md w-full text-gray-900 h-10 px-2" />
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Candidate Image*</span>
                         </label>
-                        <input type="file" {...register("candidate_image", { required: true })} className="file-input file-input-bordered rounded-md w-full h-10" />
+                        <input type="file" {...register("candidate_image", { required: true })} className="file-input file-input-bordered rounded-md w-full h-10 px-2" />
                     </div>
                     <div className='flex justify-center'>
                         <input className="btn px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900 mt-4" type="submit" value="Submit" />
